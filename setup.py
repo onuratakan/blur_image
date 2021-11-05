@@ -1,46 +1,34 @@
 from setuptools import setup
 
 
-setup(name='get_crypto_price',
+setup(name='blur_image',
 version='0.1.0',
-description="""A library to getting crypto price.""",
+description="""A library to blurring images.""",
 long_description="""
-# Get Crypto Price
-A library to getting crypto price.
+# Blur Image
+A library to blurring images.
 # Install
 ```
-pip3 install get-crypto-price
+pip3 install blur-image
 ```
 # Using
-## In another script
 ```python
-from get_crypto_price import get
-# get(source = "bitstamp", pair = "btcusdt")
-print(get())
-```
-## In command line
-```console
-  -h, --help            show this help message and exit
-  -s SOURCE, --source SOURCE
-                        Source
-  -p PAIR, --pair PAIR  Pair
-```
-```console
-get_crypto_price
+from blur_image import blur
+# blur(source, output, mode = "simple")
+# Modes: simple, box, gaussian
+# Value is available for this modes: box, gaussian
+blur("source.png", "blurred_source.png")
 ```
 """,
 long_description_content_type='text/markdown',
-url='https://github.com/onuratakan/get_crypto_price',
+url='https://github.com/onuratakan/blur_image',
 author='Onur Atakan ULUSOY',
 author_email='atadogan06@gmail.com',
 license='MIT',
-packages=["get_crypto_price"],
+packages=["blur_image"],
 package_dir={'':'src'},
 install_requires=[
-    "requests==2.25.1"
+    "Pillow==8.4.0"
 ],
-entry_points = {
-    'console_scripts': ['get_crypto_price=get_crypto_price.get_crypto_price:get'],
-},
 python_requires=">= 3",
 zip_safe=False)

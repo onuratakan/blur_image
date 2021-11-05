@@ -1,23 +1,14 @@
-# Get Crypto Price
-A library to getting crypto price.
+# Blur Image
+A library to blurring images.
 # Install
 ```
-pip3 install get-crypto-price
+pip3 install blur-image
 ```
 # Using
-## In another script
 ```python
-from get_crypto_price import get
-# get(source = "bitstamp", pair = "btcusdt")
-print(get())
-```
-## In command line
-```console
-  -h, --help            show this help message and exit
-  -s SOURCE, --source SOURCE
-                        Source
-  -p PAIR, --pair PAIR  Pair
-```
-```console
-get_crypto_price
+from blur_image import blur
+# blur(source, output, mode = "simple")
+# Modes: simple, box, gaussian
+# Value is available for this modes: box, gaussian
+blur("source.png", "blurred_source.png")
 ```
